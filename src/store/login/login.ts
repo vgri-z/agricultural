@@ -39,6 +39,19 @@ const useLoginStore = defineStore('login', {
     addMainRoutesAction(userMenus: IMenuItem[]) {
       const routes = mapMenusToRoutes(userMenus)
       routes.forEach((route) => router.addRoute('main', route))
+    },
+    loadLocalCacheAction() {
+      const token = localCache.getCache('token')
+      const userInfo = localCache.getCache('userInfo')
+      const userMenus = localCache.getCache('userMenus')
+
+      if (token && userInfo && userMenus) {
+        this.token = token
+        this.userInfo = userInfo
+        this.userMenus = userMenus
+
+        this.addMainRoutesAction(this.userMenus)
+      }
     }
   }
 })
