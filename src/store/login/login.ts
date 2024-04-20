@@ -5,6 +5,7 @@ import { ILoginAccount } from '@/views/login/types/type'
 import { localCache } from '@/utils'
 import { IMenuItem } from '@/components/nav-menu/types/type'
 import { mapMenusToRoutes } from '@/utils/map-menu'
+import router from '@/router'
 
 const useLoginStore = defineStore('login', {
   state: (): ILoginState => ({
@@ -32,9 +33,12 @@ const useLoginStore = defineStore('login', {
 
       // 根据用户菜单动态匹配路由，添加到main下面去
       this.addMainRoutesAction(this.userMenus)
+
+      router.push('/main')
     },
     addMainRoutesAction(userMenus: IMenuItem[]) {
-      mapMenusToRoutes(userMenus)
+      const routes = mapMenusToRoutes(userMenus)
+      routes.forEach((route) => router.addRoute('main', route))
     }
   }
 })
