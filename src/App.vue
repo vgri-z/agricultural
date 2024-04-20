@@ -1,8 +1,14 @@
 <template>
-  <div class="app"></div>
+  <div class="app">
+    <router-view v-slot="{ Component }">
+      <keep-alive>
+        <component :is="Component" />
+      </keep-alive>
+    </router-view>
+  </div>
 </template>
 
-<script setup></script>
+<script setup lang="ts"></script>
 
 <style scoped>
 .app {
