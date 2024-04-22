@@ -42,7 +42,10 @@
         </template>
         <!-- 没有二级菜单 -->
         <template v-else-if="item.isLeaf">
-          <el-menu-item :index="item.id + ''">
+          <el-menu-item
+            :index="item.id + ''"
+            @click="handleMenuItemClick(item)"
+          >
             <template v-if="item.icon">
               <component :class="item.icon" :is="item.icon"></component>
             </template>
@@ -55,12 +58,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { defineProps } from 'vue'
 import { pathMapToMenu } from '@/utils/map-menu'
-import { userMenus } from './data/menu'
 import { IMenuItem } from '../types/type'
+import useLoginStore from '@/store/login/login'
 
 defineProps({
   collapse: {
@@ -72,12 +75,16 @@ defineProps({
 // 这里的store是Store<any>类型的，any类型用起来不安全
 const router = useRouter()
 const route = useRoute()
+const loginStore = useLoginStore()
 const defaultValue = ref('1')
 const currentPath = ref('')
 currentPath.value = route.path // 当前路由路径
+const userMenus = computed(() => {
+  return loginStore.userMenus
+})
 
-const menu: IMenuItem = pathMapToMenu(userMenus, currentPath.value)
-defaultValue.value = menu.id + ''
+const menu: IMenuItem = pathMapToMenu(userMenus.value, currentPath.value)
+// defaultValue.value = menu.id + ''
 
 const handleMenuItemClick = (subitem: IMenuItem) => {
   router.push(subitem.url)

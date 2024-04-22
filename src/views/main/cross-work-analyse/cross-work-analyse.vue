@@ -1,5 +1,7 @@
 <template>
-  <div class="cross-work-analyse"></div>
+  <div class="cross-work-analyse">
+    <h2>跨区作业分析</h2>
+  </div>
 </template>
 
 <script setup lang="ts"></script>

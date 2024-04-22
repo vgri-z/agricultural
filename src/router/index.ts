@@ -10,18 +10,19 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: '/main',
-    component: () => import('@/views/main/main.vue'),
+    name: 'main',
+    component: () => import('../views/main/main.vue'),
     children: []
   },
   {
     path: '/login',
-    name: '登录',
-    component: () => import('@/views/login/login.vue')
+    name: 'login',
+    component: () => import('../views/login/login.vue')
   },
   {
     path: '/:pathMatch(.*)*',
     name: 'not-found',
-    component: () => import('@/views/not-found/not-found.vue')
+    component: () => import('../views/not-found/not-found.vue')
   }
 ]
 
@@ -37,6 +38,8 @@ router.beforeEach((to) => {
       return '/login'
     }
   }
+
+  console.log(router.getRoutes())
 
   if (to.path === '/main') {
     return firstMenu.url
