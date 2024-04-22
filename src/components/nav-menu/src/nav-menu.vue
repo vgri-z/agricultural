@@ -84,7 +84,7 @@ const userMenus = computed(() => {
 })
 
 const menu: IMenuItem = pathMapToMenu(userMenus.value, currentPath.value)
-// defaultValue.value = menu.id + ''
+defaultValue.value = menu.id + ''
 
 const handleMenuItemClick = (subitem: IMenuItem) => {
   router.push(subitem.url)
@@ -116,6 +116,15 @@ const handleMenuItemClick = (subitem: IMenuItem) => {
   .el-menu {
     border-right: none;
     background: #001429;
+  }
+
+  :deep(.el-menu) {
+    // 修改菜单图标大小
+    svg {
+      width: 15px;
+      height: 15px;
+      margin-right: 5px;
+    }
   }
 
   // 目录

@@ -4,7 +4,7 @@ export const userMenus: IMenuItem[] = [
   {
     displayName: '合作社概况',
     hasUrl: false,
-    icon: 'Menu',
+    icon: 'Box',
     id: '1',
     isLeaf: true,
     name: '合作社概况',
@@ -17,7 +17,7 @@ export const userMenus: IMenuItem[] = [
   {
     displayName: '实时监控',
     hasUrl: false,
-    icon: 'Menu',
+    icon: 'Monitor',
     id: '2',
     isLeaf: true,
     name: '实时监控',
@@ -30,7 +30,7 @@ export const userMenus: IMenuItem[] = [
   {
     displayName: '轨迹回放',
     hasUrl: false,
-    icon: 'Menu',
+    icon: 'Guide',
     id: '3',
     isLeaf: true,
     name: '轨迹回放',
@@ -43,7 +43,7 @@ export const userMenus: IMenuItem[] = [
   {
     displayName: '作业量统计',
     hasUrl: false,
-    icon: 'Menu',
+    icon: 'DataLine',
     id: '4',
     isLeaf: true,
     name: '作业量统计',
@@ -56,7 +56,7 @@ export const userMenus: IMenuItem[] = [
   {
     displayName: '作业质量分析',
     hasUrl: false,
-    icon: 'Menu',
+    icon: 'FirstAidKit',
     id: '5',
     isLeaf: true,
     name: '作业质量分析',
@@ -69,7 +69,7 @@ export const userMenus: IMenuItem[] = [
   {
     displayName: '作业区界分析',
     hasUrl: false,
-    icon: 'Menu',
+    icon: 'Paperclip',
     id: '6',
     isLeaf: true,
     name: '作业区界分析',
@@ -82,7 +82,7 @@ export const userMenus: IMenuItem[] = [
   {
     displayName: '跨区作业分析',
     hasUrl: false,
-    icon: 'Menu',
+    icon: 'DataAnalysis',
     id: '7',
     isLeaf: true,
     name: '跨区作业分析',
@@ -95,7 +95,7 @@ export const userMenus: IMenuItem[] = [
   {
     displayName: '农机信息管理',
     hasUrl: false,
-    icon: 'Menu',
+    icon: 'Notebook',
     id: '8',
     isLeaf: true,
     name: '农机信息管理',
