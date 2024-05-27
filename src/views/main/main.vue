@@ -48,6 +48,7 @@ const foldMenu = (isFold: boolean) => {
 
   .page-info {
     width: 100%;
+    height: 100%;
     background: #fff;
     border-radius: 5px;
   }

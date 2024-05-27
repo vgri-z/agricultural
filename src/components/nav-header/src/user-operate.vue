@@ -22,13 +22,17 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { localCache } from '@/utils/cache'
 import { useRouter } from 'vue-router'
+import useLoginStore from '@/store/login/login'
 
 const router = useRouter()
+const loginStore = useLoginStore()
 
-const userName = ref('vgri')
+const userName = computed(() => {
+  return loginStore.userInfo.userName
+})
 
 const logout = () => {
   localCache.deleteCache('token')

@@ -5,7 +5,7 @@ const mode = import.meta.env.MODE
 
 if (mode === 'development') {
   // 开发环境
-  BASE_URL = 'http://dev'
+  BASE_URL = 'https://mi.xiucore.cn:8888/dev/'
 } else if (mode === 'test') {
   // 测试环境
   BASE_URL = 'http://test'

@@ -1,3 +1,4 @@
 import { localCache } from './cache'
+import { vgriMessage } from './message'
 
-export { localCache }
+export { localCache, vgriMessage }

@@ -11,6 +11,7 @@ const vgriRequest = new VgriRequest({
   interceptors: {
     requestInterceptor: (config: InternalAxiosRequestConfig) => {
       // 里面添加，如果所有的实例都需要token，那么就在全局的请求拦截里面添加
+      config.headers['Content-Type'] = 'application/json;charset=utf-8'
       const token = localCache.getCache('token')
       if (token && config.headers) {
         config.headers.Authorization = `Bearer ${token}`

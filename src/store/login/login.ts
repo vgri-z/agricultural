@@ -23,7 +23,7 @@ const useLoginStore = defineStore('login', {
 
       // 获取用户信息-> 保存用户信息
       const userInfoRes = await getUserInfo()
-      this.userInfo = userInfoRes.data
+      this.userInfo = userInfoRes.user
       localCache.setCache('userInfo', this.userInfo)
 
       // 根据用户信息获取用户的菜单 -> 保存用户菜单

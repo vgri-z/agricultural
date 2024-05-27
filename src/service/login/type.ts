@@ -1,6 +1,13 @@
+export interface IDataLoginRes {
+  code: number
+  msg: string
+  token: string
+}
+
 export interface IUserInfo {
-  id: string
-  username: string
-  avatar: string
-  role?: string
+  code: string
+  msg: string
+  permissions: any[]
+  roles: string[]
+  user: any
 }
